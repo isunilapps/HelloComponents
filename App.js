@@ -8,6 +8,11 @@ class Blink extends Component {
 
         this.state = {isShowingText: this.props.enable};
 
+        if (!this.props.enable) {
+            this.state = {isShowingText: true}
+        }
+
+
         // Toggle the state every second
         setInterval(() => {
             this.setState(previousState => {
@@ -18,7 +23,7 @@ class Blink extends Component {
                     return { isShowingText: true };
                 }
             });
-        }, 1000);
+        }, 550);
     }
 
     render() {
